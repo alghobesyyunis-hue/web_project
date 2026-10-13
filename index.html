@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الطالب - جامعة عمران</title>
+    <!-- ربط ملف التنسيق الخارجي CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header class="main-header">
+        <div class="container">
+            <h1>جامعة عمران - بوابة الطالب</h1>
+            <p id="greeting-text">مرحباً بك في نظام الخدمات الأكاديمية</p>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="container">
+        
+        <!-- قسم نموذج تسجيل الدخول -->
+        <section id="login-section" class="login-section">
+            <h2>تسجيل دخول النظام</h2>
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="studentId">رقم القيد الجامعي:</label>
+                    <input type="text" id="studentId" placeholder="أدخل رقمك الجامعي" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentPassword">كلمة المرور:</label>
+                    <input type="password" id="studentPassword" placeholder="أدخل كلمة المرور" required>
+                </div>
+                <button type="submit" class="btn">دخول للنظام</button>
+                <p id="formMessage" class="message"></p>
+            </form>
+        </section>
+
+        <!-- لوحة تحكم الطالب (تظهر تفاعلياً بعد تسجيل الدخول الناجح) -->
+        <section id="dashboard-section" class="dashboard-section" style="display: none;">
+            <div class="welcome-banner">
+                <h2>مرحباً بك، <span id="displayedId"></span> 👋</h2>
+                <p>تم تسجيل دخولك بنجاح إلى بوابة جامعة عمران الأكاديمية.</p>
+                <button id="logoutBtn" class="btn-logout">تسجيل الخروج</button>
+            </div>
+
+            <div class="services-section" style="margin-top: 30px;">
+                <h2>خدمات الطالب المتاحة (اضغط لعرض التفاصيل)</h2>
+                <div class="cards-grid">
+                    <div class="card interactive-card" data-service="النتائج الدراسية">
+                        <h3>النتائج الدراسية</h3>
+                        <p>اضغط لعرض كشف الدرجات والمعدل التراكمي.</p>
+                    </div>
+                    <div class="card interactive-card" data-service="التسجيل والمقررات">
+                        <h3>التسجيل والمقررات</h3>
+                        <p>عرض المواد المسجلة في الفصل الحالي.</p>
+                    </div>
+                    <div class="card interactive-card" data-service="الجدول الدراسي">
+                        <h3>الجدول الدراسي</h3>
+                        <p>متابعة أوقات المحاضرات والقاعات الدراسية.</p>
+                    </div>
+                </div>
+                <!-- مكان ظهور النتيجة التفاعلية -->
+                <div id="serviceResult" class="service-result"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- تذليل الصفحة -->
+    <footer class="main-footer">
+        <p>جميع الحقوق محفوظة © 2026 - جامعة عمران (علوم الحاسوب)</p>
+    </footer>
+
+    <!-- ربط ملف الجافاسكريبت الخارجي -->
+    <script src="script.js"></script>
+</body>
+</html>
